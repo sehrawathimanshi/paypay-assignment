@@ -1,0 +1,6 @@
+<div class="container">
+    <ng-container *ngIf="emplList$">
+        <h1>Employee List</h1>
+        <app-shared-employee-list [employeeList]="emplList$ | async"></app-shared-employee-list>
+    </ng-container>
+</div>

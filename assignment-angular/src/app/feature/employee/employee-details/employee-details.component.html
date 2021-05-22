@@ -1,0 +1,32 @@
+<div class="container">
+    <div *ngIf="spinner" class="loader-position">
+        <div  class="loader"></div>
+
+    </div>
+    <h1 *ngIf="!reviewList?.length && !spinner">No Pending Reviews</h1>
+    <form [formGroup]="reviewForm">
+        <ng-container *ngIf="empData$ | async as employee">
+            <h2>{{employee.name}} please provide review to these employee:-</h2>
+        </ng-container>
+
+        <ul class="list-group">
+            <li class="emp-list" formArrayName="list" *ngFor="let item of
+                reviewListFormArr?.controls; let i= index">
+                <ng-container [formGroupName]="i">
+                    <div class="list-group-item input-box">
+                        <span>
+                            {{item?.value.employee?.name}}
+                        </span>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            formControlName="description">
+                    </div>
+                    <div class="action-btn">
+                        <button type="button" class="btn btn-primary" (click)="submitFeedback(i)">Submit
+                            Feedback</button>
+                    </div>
+
+                </ng-container>
+            </li>
+        </ul>
+    </form>
+</div>

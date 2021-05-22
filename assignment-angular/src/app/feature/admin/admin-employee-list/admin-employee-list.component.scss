@@ -1,0 +1,29 @@
+.container{
+    .emp-list{
+        display: flex;
+        padding-bottom: 20px;
+    }
+    .input-box{
+        flex-basis: 60%;
+    }
+    
+    h1{
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    .action-btn{
+        flex-basis: 40%;
+        span {
+            padding-right: 10px;
+        }
+    }
+
+
+}
+
+.add-button{
+    button{
+        margin: 10px;
+    }
+}

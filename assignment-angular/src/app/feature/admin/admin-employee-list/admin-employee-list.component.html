@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Admin Dashboard View</h1>
+    <form [formGroup]="form">
+        <ul class="list-group">
+
+            <li class="emp-list" formArrayName="list" *ngFor="let item of
+                empListFormArr?.controls; let i= index">
+                <ng-container [formGroupName]="i">
+                    <div class="list-group-item input-box">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            formControlName="name">
+                    </div>
+                    <div class="action-btn">
+                            <span class="add-button">
+                                <button type="button" class="btn btn-primary" *ngIf="i ===
+                                (empListFormArr?.controls?.length -1)" (click)="addNew(item)">Add</button>
+                            </span>
+                       
+                        <ng-container *ngIf="i
+                        <(empListFormArr?.controls?.length -1)">
+                            <span>
+                                <button type="button" class="btn btn-primary" (click)="updateItem(item)">Update</button>
+                            </span>
+                            <span>
+                                <button type="button" class="btn btn-info"
+                                    [routerLink]="['/admin/employee', item.value._id]">View
+                                    Details</button>
+                            </span>
+
+                            <span>
+                                <button type="button" class="btn btn-danger" (click)="remove(i)">Delete</button>
+
+                            </span>
+                        </ng-container>
+                    </div>
+
+                </ng-container>
+            </li>
+        </ul>
+    </form>
+</div>

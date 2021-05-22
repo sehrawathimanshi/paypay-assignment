@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/']">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/employee/list']">Employee View</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/admin/employee-list']">Admin View</a>
+    </li>
+  </ul>
+</nav>
+<div class="icon-image" *ngIf="router.url === '/'">
+  <span>
+    <img src="../assets/download.png" alt="">
+  </span>
+  <span class="text-content">Coding Challenge</span>
+
+</div>
+
+
+<router-outlet></router-outlet>
